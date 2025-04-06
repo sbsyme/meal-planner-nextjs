@@ -1,0 +1,134 @@
+{
+  "type": "object",
+  "properties": {
+    "shopping_list": {
+      "type": "array",
+      "description": "A list of items needed for shopping",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the item."
+          },
+          "price": {
+            "type": "object",
+            "description": "The price of the item.",
+            "properties": {
+              "amount": {
+                "type": "number",
+                "description": "The numerical price of the item."
+              },
+              "currency": {
+                "type": "string",
+                "description": "The currency of the price of the item."
+              }
+            },
+            "required": [
+              "amount",
+              "currency"
+            ],
+            "additionalProperties": false
+          },
+          "quantity": {
+            "type": "string",
+            "description": "The quantity of the item with number and unit of measurement."
+          },
+          "pricing_ref": {
+            "type": "string",
+            "description": "A link to where the pricing information was fetched from."
+          }
+        },
+        "required": [
+          "name",
+          "price",
+          "quantity",
+          "pricing_ref"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "meal_plan": {
+      "type": "array",
+      "description": "A list of days containing meals for each day",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "string",
+            "description": "The name or number of the day."
+          },
+          "meals": {
+            "type": "array",
+            "description": "List of meals planned for the day.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "meal_name": {
+                  "type": "string",
+                  "description": "The name of the meal."
+                },
+                "recipe": {
+                  "type": "object",
+                  "properties": {
+                    "steps": {
+                      "type": "array",
+                      "description": "List of steps required for meal preparation.",
+                      "items": {
+                        "type": "string",
+                        "description": "A single step of the recipe."
+                      }
+                    },
+                    "ingredients": {
+                      "type": "array",
+                      "description": "List of ingredients required for meal preparation.",
+                      "items": {
+                        "type": "object",
+                        "description": "Ingredient in the recipe.",
+                        "properties": {
+                          "ingredient_name": {
+                            "type": "string",
+                            "description": "Name of the ingredien.t"
+                          },
+                          "quantity": {
+                            "type": "string",
+                            "description": "The quantity of the ingredient required."
+                          }
+                        },
+                        "required": [
+                          "ingredient_name",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "steps",
+                    "ingredients"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "meal_name",
+                "recipe"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "day",
+          "meals"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "shopping_list",
+    "meal_plan"
+  ],
+  "additionalProperties": false
+}
