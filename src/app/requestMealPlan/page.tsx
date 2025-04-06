@@ -31,7 +31,7 @@ export default function RequestMealPlanForm() {
                     <SubmitButton label="Create Meal Plan" loading="Creating Meal Plan..."/>
                 </Form>
                 :
-                <MealPlanSummary mealPlan={mealPlanData} />
+                <MealPlanSummary mealPlan={mealPlanData!} />
             }
         </div>)
 

@@ -15,8 +15,8 @@ export default function SupermarketInput() {
                 <option disabled>Choose a supermarket</option>
                 <option value="Tesco">Tesco</option>
                 <option value="Asda">Asda</option>
-                <option value="Sainsburys">Sainsbury's</option>
-                <option value="Morrisons">Morrison's</option>
+                <option value="Sainsburys">Sainsbury&#39;s</option>
+                <option value="Morrisons">Morrison&#39;s</option>
                 <option value="Aldi">Aldi</option>
                 <option value="Lidl">Lidl</option>
                 <option value="Waitrose">Waitrose</option>
