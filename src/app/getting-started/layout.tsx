@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-export default function RequestMealPlanLayout({
+export default function SummaryLayout({
                                              children
                                          }: {
     children: React.ReactNode;
 }) {
-    return <>
+    return <div>
         {children}
-    </>;
+    </div>;
 }

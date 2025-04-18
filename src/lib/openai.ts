@@ -9,6 +9,7 @@ const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY});
 
 export const fetchMealPlan = async (formData: FormData): Promise<MealPlan> => {
     if (process.env.UNDER_TEST === 'true') {
+        await new Promise(resolve => setTimeout(resolve, 5000))
         return data as MealPlan;
     }
 
