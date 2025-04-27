@@ -1,3 +1,5 @@
+'use client';
+
 import {useFormStatus} from "react-dom";
 import {Button} from "flowbite-react";
 
@@ -6,7 +8,7 @@ type SubmitButtonProps = {
     loading: React.ReactNode;
 };
 
-export default function SubmitButton({ label, loading }: SubmitButtonProps) {
+export default function FormSubmitButton({ label, loading }: SubmitButtonProps) {
     const { pending } = useFormStatus();
 
     return (
