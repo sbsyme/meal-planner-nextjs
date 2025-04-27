@@ -1,26 +1,14 @@
-'use client';
+import {getMealPlanByUser} from "@/actions";
+import Summary from "@/components/summary/Summary";
+import {redirect} from "next/navigation";
 
-import {useUser} from "@auth0/nextjs-auth0";
-
-export default function MealPlanPage() {
-
-    const {user, isLoading} = useUser()
+export default async function MealPlanPage() {
+    const mealPlan = await getMealPlanByUser()
+    if (Object.keys(mealPlan).length === 0) {
+        redirect('/getting-started')
+    }
 
     return (
-        <>
-            {isLoading && <p>Loading...</p>}
-            {user && (
-                <div style={{ textAlign: "center" }}>
-                    <img
-                        src={user.picture}
-                        alt="Profile"
-                        style={{ borderRadius: "50%", width: "80px", height: "80px" }}
-                    />
-                    <h2>{user.name}</h2>
-                    <p>{user.email}</p>
-                    <pre>{JSON.stringify(user, null, 2)}</pre>
-                </div>
-            )}
-        </>
+        <Summary mealPlan={mealPlan}/>
     );
 };

@@ -2,7 +2,7 @@
 
 import {MealPlan} from "@/types/types";
 import React from 'react'
-import ShoppingList from "@/components/ShoppingList";
+import ShoppingList from "@/components/form/ShoppingList";
 import MealPlanSummary from "@/components/summary/MealPlanSummary";
 import {TabItem, Tabs} from "flowbite-react";
 

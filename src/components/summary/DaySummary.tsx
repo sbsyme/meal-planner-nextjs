@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import {MealPlanElement} from "@/types/types";
 import React from "react";
@@ -9,8 +9,7 @@ export default function DaySummary({item}: { item: MealPlanElement }) {
     return (
         <Accordion collapseAll>
             {item.meals.map((meal) => (
-                // eslint-disable-next-line react/jsx-key
-                <AccordionPanel>
+                <AccordionPanel key={meal.meal_name}>
                     <AccordionTitle>{meal.meal_name}</AccordionTitle>
                     <AccordionContent>
                         <Recipe meal={meal}/>

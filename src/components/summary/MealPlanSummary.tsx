@@ -10,8 +10,7 @@ export default function MealPlanSummary({mealPlan}: { mealPlan: MealPlan }) {
     return (<div>
             <Accordion collapseAll className="bg-white dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                 {mealPlan.meal_plan.map((item) => (
-                    // eslint-disable-next-line react/jsx-key
-                    <AccordionPanel>
+                    <AccordionPanel key={item.day}>
                         <AccordionTitle className="font-semibold">{item.day}</AccordionTitle>
                         <AccordionContent>
                             <DaySummary item={item} />
