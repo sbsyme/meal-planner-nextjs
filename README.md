@@ -2,6 +2,7 @@
 Creates a weekly meal plan, including a shopping list and recipes, using the OpenAI API based on the user's budget and preferred supermarket.
 
 ## Getting Started
+The project is currently hosted on [vercel](https://meal-planner-nextjs-two.vercel.app/) but if you would like to be able to run the project locally, use the following guide.
 
 1. Provide your OpenAI API Key in the environment variable `OPENAI_API_KEY`.
 2. Create an assistant in the [OpenAI playground](https://platform.openai.com/playground).
