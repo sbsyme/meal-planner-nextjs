@@ -159,7 +159,32 @@ Each meal should also have a detailed recipe with ingredients from the shopping 
 ```
 5. Grab the assistant id underneath the name field and provide it in the environment variable `MEAL_PLANNER_OPENAI_ASSISTANT_ID`.
 
-6. Install dependencies
+6. As this is currently not hosted anywhere, this also requires the creation of an Auth0 application and a MongoDB collection. Also, provide environment variables for these as well.
+
+7. There is also an environment variable to run the application under test which does not incorporate the OpenAI functionality and returns a sample meal plan contained within the project. To run the project with the OpenAI Assistant, set the `UNDER TEST` to false. All in all your environment variables should look something like the following:
+
+```
+UNDER_TEST=true
+
+## MongoDB
+MONGODB_USERNAME=username
+MONGODB_PASSWORD=password
+MONGODB_URI=mongodb_uri
+
+## OpenAI
+MEAL_PLANNER_OPENAI_ASSISTANT_ID=assistant_id
+OPENAI_API_KEY=api_key
+
+## Auth0
+AUTH0_SECRET=auth0_secret
+APP_BASE_URL='http://localhost:3000'
+AUTH0_DOMAIN=auth0_domain
+AUTH0_CLIENT_ID=client_id
+AUTH0_CLIENT_SECRET=client_secret
+
+```
+
+8. Install dependencies
 
 ```bash
 npm install
